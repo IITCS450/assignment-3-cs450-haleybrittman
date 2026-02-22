@@ -1,3 +1,6 @@
+#include "types.h"
+#include "param.h"
+
 // Per-CPU state
 struct cpu {
   uchar apicid;                // Local APIC ID
