@@ -1,4 +1,3 @@
-// Set the number of tickets for the calling process
 int
 sys_settickets(void)
 {

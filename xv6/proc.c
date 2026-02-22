@@ -113,7 +113,6 @@ userinit(void)
 
   // this assignment to p->state lets other cores
 
-  // Simple LCG PRNG for kernel use (to be implemented)
   static unsigned int lcg_seed = 123456789;
   unsigned int lcg_rand(void) {
     lcg_seed = (1103515245 * lcg_seed + 12345) & 0x7fffffff;
