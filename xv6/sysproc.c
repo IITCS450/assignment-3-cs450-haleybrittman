@@ -1,23 +1,23 @@
-int
-sys_settickets(void)
-{
-  int n;
-  if(argint(0, &n) < 0)
-    return -1;
-  if(n < 1)
-    return -1;
-  struct proc *curproc = myproc();
-  curproc->tickets = n;
-  return 0;
-}
 #include "types.h"
-#include "x86.h"
 #include "defs.h"
-#include "date.h"
 #include "param.h"
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
+#include "x86.h"
+#include "date.h"
+
+int
+sys_settickets(void)
+{
+  int n;
+  if(argint(0, &n) < 0 || n < 1)
+    return -1;
+
+  struct proc *curproc = myproc();
+  curproc->tickets = n; // Update tickets for the current process
+  return 0;
+}
 
 int
 sys_fork(void)
